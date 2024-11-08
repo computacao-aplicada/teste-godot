@@ -1,6 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://368rpcxcgvhm"]
+[gd_scene load_steps=5 format=3 uid="uid://368rpcxcgvhm"]
+
+[ext_resource type="Texture2D" uid="uid://da12bi115b6or" path="res://assets/tilemap_packed.png" id="1_8lplv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mb1ok"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rgbjr"]
+texture = ExtResource("1_8lplv")
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ve56u"]
+sources/0 = SubResource("TileSetAtlasSource_rgbjr")
 
 [node name="Node2D" type="Node2D"]
 
@@ -8,3 +20,6 @@
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 shape = SubResource("CircleShape2D_mb1ok")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_set = SubResource("TileSet_ve56u")
